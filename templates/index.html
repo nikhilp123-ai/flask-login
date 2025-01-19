@@ -5,5 +5,9 @@
 
 <h1>index page</h1>
 <form action="index.html"></form>
+<a href="{{ url_for('register')}}"><h2>Register</h2></a>
+<a href="{{ url_for('login')}}"><h2>Login</h2></a>
+<a href="{{ url_for('dashboard')}}"><h2>Dashboard</h2></a>
+<a href="{{ url_for('logout')}}"><h2>Logout </h2></a>
 
 {% endblock%}
