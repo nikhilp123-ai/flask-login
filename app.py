@@ -5,17 +5,25 @@ from wtforms.validators import DataRequired,Email,ValidationError
 import bcrypt
 from flask_mysqldb import MySQL
 import email_validator
-
+from flask_sqlalchemy import SQLAlchemy
+import os
 app =Flask(__name__)
 
 # MySQL Quafigration
-app.config['MYSQL_HOST']='localhost'
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get("DATABASE_URL")
 app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD']=''
 app.config['MYSQL_DB']='mydatabase'
 app.secret_key='your_secret_key'
+#postgresql://mydatabase_2sjd_user:u7ekFGvLjAprTrMJH3OcBMl9p17vcJNg@dpg-cu6kno5svqrc738jk040-a.oregon-postgres.render.com/mydatabase_2sjd
 
 mysql=MySQL(app)
+db = SQLAlchemy(app)
+class user(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(30))
+    password = db.Column(db.String(30))
 
 
 class RegisterForm(FlaskForm):
