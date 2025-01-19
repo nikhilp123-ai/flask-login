@@ -19,7 +19,7 @@ app.secret_key='your_secret_key'
 
 mysql=MySQL(app)
 db = SQLAlchemy(app)
-class user(db.Model):
+class users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     email = db.Column(db.String(30))
