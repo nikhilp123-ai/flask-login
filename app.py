@@ -11,10 +11,10 @@ app =Flask(__name__)
 
 # MySQL Quafigration
 app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get("DATABASE_URL")
-app.config['MYSQL_USER']='root'
-app.config['MYSQL_PASSWORD']=''
-app.config['MYSQL_DB']='mydatabase'
-app.secret_key='your_secret_key'
+# app.config['MYSQL_USER']='root'
+# app.config['MYSQL_PASSWORD']=''
+# app.config['MYSQL_DB']='mydatabase'
+# app.secret_key='your_secret_key'
 #postgresql://mydatabase_2sjd_user:u7ekFGvLjAprTrMJH3OcBMl9p17vcJNg@dpg-cu6kno5svqrc738jk040-a.oregon-postgres.render.com/mydatabase_2sjd
 
 mysql=MySQL(app)
