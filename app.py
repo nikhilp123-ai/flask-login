@@ -96,6 +96,7 @@ def dashboard():
         if user:
             return render_template('dashboard.html',user=user) 
     redirect(url_for('login'))
+    return render_template('dashboard.html')
 
 @app.route('/logout')
 def logout():
